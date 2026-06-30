@@ -11,7 +11,7 @@ function PLUGIN:PostInstall(ctx)
   -- Verify installation works
   local destFile = path .. "/" .. "weed"
 
-  local result = os.execute(destFile .. " version > /dev/null 2>&1")
+  local result = os.execute(destFile .. " version")
   if result ~= 0 then
     error(PLUGIN.name .. " installation appears to be broken")
   end
